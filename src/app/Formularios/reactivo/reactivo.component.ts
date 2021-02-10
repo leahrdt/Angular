@@ -9,8 +9,9 @@ import { validadorNombre,validadorApellido, validadorEmail,validadorEdad,validad
   styleUrls: ['./reactivo.component.css']
 })
 export class ReactivoComponent implements OnInit {
-  
+  instrucciones:boolean=false
   validator:boolean=false
+  alerta:boolean=true
   titulo="Formulario Reactivo";
 
   constructor(private fn: FormBuilder) { }
@@ -37,7 +38,9 @@ export class ReactivoComponent implements OnInit {
   onSubmit():void{ //evento del submit
     console.log("enviado!")
     if(this.formAngular.valid ){
-    this.validator=true}
+    this.validator=true} else {
+      this.alerta=false
+    }
     
   }
 
@@ -69,6 +72,16 @@ get terminos() { return this.formAngular.get('terminos');}
 
 aceptarAlerta():void{ //evento del submit
   this.validator=false
+  
+}
+
+aceptarInst():void{ //evento del submit
+  this.instrucciones=false
+  
+}
+
+instrucc():void{ //evento del submit
+  this.instrucciones=true
   
 }
 }

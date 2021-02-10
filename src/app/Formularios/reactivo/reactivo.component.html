@@ -1,6 +1,8 @@
 
 <div class="container">
-<h2>{{titulo}}</h2>
+
+<h2 class="col-md-12 col-12 Tit" >{{titulo}}</h2>
+<button class="btn btn-success col-md-12 col-12 Instru" type="button" (click)="instrucc()">Instrucciones</button>
 
         <form [formGroup]="formAngular" (ngSubmit)="onSubmit()">
 
@@ -11,7 +13,7 @@
                     <input type="text" class="form-control" formControlName="name" placeholder="Nombre" name="name" id="Name">
                     <div *ngIf="name.invalid && (name.dirty || name.touched)">
                             <div *ngIf="name.errors.nameName" class="alert alert-danger" role="alert">
-                                Este campo es obligatorio
+                                Debe completar su nombre
                             </div>
                     </div>
                 </div>
@@ -21,7 +23,7 @@
                     <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido" name="apellido" id="apellido"> 
                     <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
                             <div *ngIf="apellido.errors.apellidoApellido" class="alert alert-danger" role="alert">
-                                Este campo es obligatorio
+                                Debe completar su apellido
                             </div>
                     </div>
                 </div>
@@ -85,6 +87,11 @@
 
                 <div class="form-group col-md-6 "></div>
                 <div class="form-group col-md-6 col-12">
+                    
+                    <div *ngIf="alerta == false" class="alert alert-danger" role="alert">
+                        Uno o mas campos no fueron completados
+                    </div>
+
                 <button class="btn btn-primary ml-4" type="submit">Enviar</button>
                 <button class="btn btn-danger ml-5" type="button" (click)="actualizate()">Limpiar Formulario</button>
                 </div>
@@ -106,4 +113,17 @@
     
     <button class="btn btn-primary" (click)="aceptarAlerta()" >Aceptar</button>
 </div>
-
+<div *ngIf="instrucciones == true" class="alert alert-success instValid" role="alert">
+    <h1>Instrucciones</h1>
+    <p>Complete correctamente todos los campos
+    </p>
+    <p>
+        Si los campos se completan correctamente, los datos se van a mostrar en pantalla (no se envian a ningun servidor) por ende el formulario va a estar validado.
+    </p>
+    <p>
+        En el caso contrario, el formulario no va a ser validado.
+    </p>
+    
+    
+    <button class="btn btn-success  " (click)="aceptarInst()" >Aceptar</button>
+</div>

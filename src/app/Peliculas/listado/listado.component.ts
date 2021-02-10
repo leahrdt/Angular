@@ -11,11 +11,13 @@ import { Router } from '@angular/router'
 export class ListadoPeliculaComponent implements OnInit { 
   //tengo tres atributos, titulo q es mi titulo (string), scvPelicula ue es una instancia de PeliculaService y finalmente pelicula que es un array del tipo pelicula
 
+
   peliculas:Pelicula[]; //7.2, creo un atributo pelicula del tipo array de pelicula, aun no tiene valor. 
   //9- ya tenemos almacenado aca el resultado del observable.
   idPeliculaSeleccion:number;  //a- idPeliculaSeleccion:number
   titulo:string = "Carrete de Fotos";
   updateOk:boolean = false;
+  instrucciones:boolean=false
   constructor(private svcPelicula: PeliculaService, private router:Router) { } //6- instancio el servicio en el constructor.
 
   ngOnInit(): void {
@@ -47,4 +49,14 @@ export class ListadoPeliculaComponent implements OnInit {
       console.log("todo bien")
     }
   }
+
+  
+aceptarInst():void{ //evento del submit
+  this.instrucciones=false
+  
+}
+instrucc():void{ //evento del submit
+  this.instrucciones=true
+  
+}
 }

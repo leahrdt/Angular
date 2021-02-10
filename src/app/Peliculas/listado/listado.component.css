@@ -23,3 +23,22 @@
 .boton{
     margin-left: 55;
 }
+.Tit{
+    text-align: center;
+    
+    margin-top: 1%;
+}
+.Instru{
+    
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+}
+
+.instValid{
+    position: absolute;
+    top:25%;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}

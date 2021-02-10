@@ -2,7 +2,8 @@
     <!-- esto se va a mostrar siempre y cuando NO alla un idPeliculaSeleccion -->
 
     <div class="container">
-<h1>{{titulo}}</h1>
+        <h2 class="col-md-12 col-12 Tit" >{{titulo}}</h2>
+        <button class="btn btn-success col-md-12 col-12 Instru" type="button" (click)="instrucc()">Instrucciones</button>
 <div class="alert alert-success" role="alert" *ngIf="updateOk">
     La pelicula fue modificada con exito
 </div>
@@ -25,7 +26,21 @@
 
 </div>  
 </div>
-
+<div *ngIf="instrucciones == true" class="alert alert-success instValid" role="alert">
+    <h1>Instrucciones</h1>
+    <p>
+        Desde el boton editar, usted puede modificar a su gusto la información de cada tarjeta.
+    </p>
+    <p>
+        Toda la informacion del carrete de fotos es generada de manera aleatoria (desde una APIRest)
+    </p>
+    <p>
+        Debido a esto, es posible que las imagenes tarden un tiempo en cargarse (aveces bastante), igualmente puede modificar la información de las tarjetas.
+    </p>
+    
+    
+    <button class="btn btn-success" (click)="aceptarInst()" >Aceptar</button>
+</div>
 
 
 <!-- esto se va a mostrar siempre y cuando ALLA un idPeliculaSeleccion -->
