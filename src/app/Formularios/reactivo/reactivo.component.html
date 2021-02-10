@@ -1,0 +1,109 @@
+
+<div class="container">
+<h2>{{titulo}}</h2>
+
+        <form [formGroup]="formAngular" (ngSubmit)="onSubmit()">
+
+
+            <div class="row">
+                <div class="form-group col-md-6 col-12">
+                    <label for="">Nombre:</label>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Nombre" name="name" id="Name">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                            <div *ngIf="name.errors.nameName" class="alert alert-danger" role="alert">
+                                Este campo es obligatorio
+                            </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6 col-12">
+                    <label for="">Apellido:</label>
+                    <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido" name="apellido" id="apellido"> 
+                    <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                            <div *ngIf="apellido.errors.apellidoApellido" class="alert alert-danger" role="alert">
+                                Este campo es obligatorio
+                            </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6 col-12">
+                    <label for="">Password:</label>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password" name="password"> 
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <div *ngIf="password.errors.passPass" class="alert alert-danger" role="alert">
+                            La contraseña debe ser mayor a 8 caracteres
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-12 col-12">
+                    <label for="pais">Pais:</label>
+                    <select name="pais" id="pais" formControlName="pais" class="form-control" placeholder="Seleccione...">
+                        <option value="0">Seleccione...</option>
+                        <option value="1">Argentina</option>
+                        <option value="2">Uruguay</option>
+                        <option value="3">Chile</option>
+                        <option value="4">Bolivia</option>
+                        <option value="5">Paraguay</option>
+                        <option value="6">Brasil</option>
+                    </select>
+                    <div *ngIf="pais.invalid && (pais.dirty || pais.touched)">
+                            <div *ngIf="pais.errors.paisPais" class="alert alert-danger" role="alert">
+                                Este campo es obligatorio
+                            </div>
+                        </div>
+                </div>
+
+            
+                <div class="form-group col-md-6 col-12">
+                    <label for="">Edad:</label>
+                    <input type="text" class="form-control" formControlName="edad" placeholder="Edad" name="edad"> 
+                    <div *ngIf="edad.invalid && (edad.dirty || edad.touched)">
+                            <div *ngIf="edad.errors.edadEdad" class="alert alert-danger" role="alert">
+                                Este campo es obligatorio
+                            </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6 col-12">
+                    <label for="">Email:</label>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Email" name="apellido"> 
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <div *ngIf="email.errors.emailEmail" class="alert alert-danger" role="alert">
+                                Este campo es obligatorio
+                            </div>
+                    </div>
+                </div>
+
+                <label>
+                    <div class="form-group col-md-12 col-12">
+                    <input type="checkbox" name="terminos" formControlName="terminos">
+                    Aceptar <a href="#">Términos y condiciones</a>
+                    <span class="oculto"> Debes aceptar los términos para que el formulario sea valido.</span>
+                    </div>
+                </label>
+
+                <div class="form-group col-md-6 "></div>
+                <div class="form-group col-md-6 col-12">
+                <button class="btn btn-primary ml-4" type="submit">Enviar</button>
+                <button class="btn btn-danger ml-5" type="button" (click)="actualizate()">Limpiar Formulario</button>
+                </div>
+
+            </div>  
+
+
+        </form>
+
+
+
+
+
+</div>
+
+<div *ngIf="validator == true" class="alert alert-success formValid" role="alert">
+    <p>El formulario fue validado correctamente!</p>
+    <pre>{{formAngular.value | json}}</pre>
+    
+    <button class="btn btn-primary" (click)="aceptarAlerta()" >Aceptar</button>
+</div>
+

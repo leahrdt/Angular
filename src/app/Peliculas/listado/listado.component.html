@@ -1,0 +1,51 @@
+<!-- <div *ngIf="!idPeliculaSeleccion">  -->
+    <!-- esto se va a mostrar siempre y cuando NO alla un idPeliculaSeleccion -->
+
+    <div class="container">
+<h1>{{titulo}}</h1>
+<div class="alert alert-success" role="alert" *ngIf="updateOk">
+    La pelicula fue modificada con exito
+</div>
+<div class="row">
+    
+<div class="card row col-md-3 col-12 test" style="width: 1rem;" *ngFor="let pelis of peliculas" (click)="seleccionarPelicula(pelis.id_pelicula)">
+
+        <img [src]="pelis.foto" class="card-img-top" alt="...">
+        <div class="card-body cuerpoCarta">
+            <h5 class="card-title ">Titulo</h5   >
+            <p class="card-text titulo">{{pelis.titulo}}</p>
+            <h5 class="card-title ">Fotografo</h5>
+            <p class="card-text titulo">{{pelis.director}}</p>
+            <h5 class="card-title ">Pais</h5>
+            <p class="card-text titulo">{{pelis.genero}}</p>
+            <button class="btn btn-primary boton" (click)=seleccionarPelicula(pelis.id_pelicula)>Editar</button>
+        </div>
+    
+    </div>
+
+</div>  
+</div>
+
+
+
+<!-- esto se va a mostrar siempre y cuando ALLA un idPeliculaSeleccion -->
+    
+<!-- le voy a pasar al componente detalle-pelicula,idPeliculaSleeccion el cual lo va a recibir como "id_pelicula" -->
+<!-- </div>
+
+<div *ngIf="idPeliculaSeleccion">
+
+<app-detalle-pelicula
+[id_pelicula]="idPeliculaSeleccion" 
+(cancelar)="volverAtras($event)"
+(guardar)="guardadoOK($event)"> 
+</app-detalle-pelicula> 
+
+</div> -->
+<!-- aca le digo que cuandon se produzca el evento cancelar, que viene del otro componente, voy a llamar al metodo "volverAtras" que le pusimos como parametro un objeto del tipo event-->
+<!-- c- cuando se seleccione idPeliculaSeleccion voy a mandar al componente app-detalle-pelicula el ID que esta en idPeliculaSeleccion -->
+<!-- <pre>
+    {{pelis | json}}
+</pre>  -->
+<!-- <pre>{{peliculas | json}}</pre> -->
+

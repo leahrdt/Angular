@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>{{titulo}}</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="">Nombre:</label>
+                <input type="text" class="form-control" name="nombre" [(ngModel)]="estudianteT.nombre" (keyup)="mostrarEstudiante()"> 
+                <!-- ngModel genera una interaccion permanente con el ts-->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="">Legajo:</label>
+                <input type="text" class="form-control" name="legajo" [(ngModel)]="estudianteT.legajo">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="">Materia:</label>
+                <input type="text" class="form-control" name="materia" [(ngModel)]="estudianteT.materia">
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg">Modificar</button>
+    
+</div>

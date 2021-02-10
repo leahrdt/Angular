@@ -1,0 +1,25 @@
+.row{
+    width: 100%;
+    margin:0%;
+}
+.test{
+    margin-bottom: 1%;
+    margin: none;
+}
+
+.card-img-top{
+    margin-top: 5%;
+}
+
+.titulo{
+    margin-top:-5%;
+}
+
+.cuerpoCarta{
+    margin:0;
+    padding: -5 !important;
+}
+
+.boton{
+    margin-left: 55;
+}

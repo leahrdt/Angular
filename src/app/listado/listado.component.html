@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Listado de Estudiantes</h1>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Legajo</th>
+                <th>Materia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let estudiante of losEstudiantes" (click)="verDetalleEstudiante(estudiante)">
+                <!-- estudiante es un nombre que defino yo aca, y lo agarro desde losEstudiantes --> <!-- el evento es verDetalleEstudiante,  el parametro que le doy es un "estudiante", -->
+                <td>{{estudiante.nombre}}</td>
+                <td>{{estudiante.legajo}}</td>
+                <td>{{estudiante.materia}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf= "estudianteSeleccionado"> <!-- SI SE SELECCIONA ESTUDIANTE SELECCIONADO.... -->
+<app-detalle [estudianteT]="estudianteSeleccionado"> </app-detalle> <!-- A TRAVEZ DE estudianteT CONECTO ESTE COMPONENTE LISTADO CON EL COMPONENTE DETALLE -->
+</div>

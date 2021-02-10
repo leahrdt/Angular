@@ -1,0 +1,25 @@
+<h2>{{titulo}}</h2>
+<div class="row">
+    <div class="col-6">
+        <form (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="estudiante.nombre" required minlength="5" maxlength="30" #nombre="ngModel">
+                    <div [hidden]="nombre.valid || nombre.pristine"  class="alert alert-danger"> <!-- esto es para que se vea el cartel cuando esta invalidado -->
+                        Debe completar el nombre
+                    </div>
+
+                    <label for="">Apellido:</label>
+                    <input type="text" class="form-control" name="apellido" [(ngModel)]="estudiante.apellido"
+                    required minlength="5" maxlength="10" #apellido="ngModel">
+                    <div [hidden]="apellido.valid || apellido.pristine"  class="alert alert-danger"> <!-- esto es para que se vea el cartel cuando esta invalidado -->
+                        Debe completar el Apellido
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+<pre>{{estudiante | json}}</pre>
