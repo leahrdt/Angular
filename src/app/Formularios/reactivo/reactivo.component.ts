@@ -21,8 +21,8 @@ export class ReactivoComponent implements OnInit {
   }
 
   formAngular = new FormGroup({ //para averiguar mas sobre Validators, google que en la web de angular estan todos, lo mas facil es usar expRegulares
-    'name': new FormControl('', [Validators.required,validadorNombre(/^[A-Za-z]+$/)]), //nombre es el nombre de de formControlName
-    'apellido': new FormControl('', [Validators.required,validadorApellido(/^[A-Za-z]+$/)]), 
+    'name': new FormControl('', [Validators.required,validadorNombre(/^[A-Za-z ,.'-]+$/i)]), //nombre es el nombre de de formControlName
+    'apellido': new FormControl('', [Validators.required,validadorApellido(/^[A-Za-z ,.'-]+$/i)]), 
     'email': new FormControl('', [Validators.required,validadorEmail(/^[A-Za-z]+(\.?\w+)*([\-_]?\w+)@[A-Za-z]+([\-_]?\w+)*(\.[A-Za-z]{2,7})+$/)]),
     'password': new FormControl('', [Validators.required,validadorPass(/^[A-Za-z0-9]\w{8,}$/)]),
     'edad': new FormControl('', [Validators.required,validadorEdad(/^[\d]+$/)]),
@@ -38,7 +38,9 @@ export class ReactivoComponent implements OnInit {
   onSubmit():void{ //evento del submit
     console.log("enviado!")
     if(this.formAngular.valid ){
-    this.validator=true} else {
+    this.validator=true
+    this.alerta=true
+  } else {
       this.alerta=false
     }
     

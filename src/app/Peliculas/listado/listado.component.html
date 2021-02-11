@@ -19,7 +19,7 @@
             <p class="card-text titulo">{{pelis.director}}</p>
             <h5 class="card-title ">Pais</h5>
             <p class="card-text titulo">{{pelis.genero}}</p>
-            <button class="btn btn-primary boton" (click)=seleccionarPelicula(pelis.id_pelicula)>Editar</button>
+            <button class="btn btn-primary boton col-12" (click)=seleccionarPelicula(pelis.id_pelicula)>Editar</button>
         </div>
     
     </div>
@@ -29,13 +29,13 @@
 <div *ngIf="instrucciones == true" class="alert alert-success instValid" role="alert">
     <h1>Instrucciones</h1>
     <p>
-        Desde el boton editar, usted puede modificar a su gusto la información de cada tarjeta.
+        Desde el Botón Editar, usted puede modificar a su gusto la información de cada tarjeta.
     </p>
     <p>
         Toda la informacion del carrete de fotos es generada de manera aleatoria (desde una APIRest)
     </p>
     <p>
-        Debido a esto, es posible que las imagenes tarden un tiempo en cargarse (aveces bastante), igualmente puede modificar la información de las tarjetas.
+        Debido a esto, es posible que las imágenes tarden un tiempo en cargarse (aveces bastante), igualmente puede modificar la información de las tarjetas.
     </p>
     
     

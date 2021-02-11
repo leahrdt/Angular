@@ -40,8 +40,8 @@
                 
                 <div class="form-group col-md-12 col-12">
                     <label for="pais">Pais:</label>
-                    <select name="pais" id="pais" formControlName="pais" class="form-control" placeholder="Seleccione...">
-                        <option value="0">Seleccione...</option>
+                    <select name="pais" id="pais" formControlName='pais' class="form-select form-control" aria-label="Disabled select example">
+                        <option value="0" selected>Seleccionar pais..</option>
                         <option value="1">Argentina</option>
                         <option value="2">Uruguay</option>
                         <option value="3">Chile</option>
@@ -51,7 +51,7 @@
                     </select>
                     <div *ngIf="pais.invalid && (pais.dirty || pais.touched)">
                             <div *ngIf="pais.errors.paisPais" class="alert alert-danger" role="alert">
-                                Este campo es obligatorio
+                                Debe seleccionar un pais de la lista
                             </div>
                         </div>
                 </div>
@@ -62,7 +62,7 @@
                     <input type="text" class="form-control" formControlName="edad" placeholder="Edad" name="edad"> 
                     <div *ngIf="edad.invalid && (edad.dirty || edad.touched)">
                             <div *ngIf="edad.errors.edadEdad" class="alert alert-danger" role="alert">
-                                Este campo es obligatorio
+                                Este campo es obligatorio 
                             </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <input type="email" class="form-control" formControlName="email" placeholder="Email" name="apellido"> 
                     <div *ngIf="email.invalid && (email.dirty || email.touched)">
                             <div *ngIf="email.errors.emailEmail" class="alert alert-danger" role="alert">
-                                Este campo es obligatorio
+                                Este campo es obligatorio y debe contener una direccion mail valida.
                             </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <div class="form-group col-md-12 col-12">
                     <input type="checkbox" name="terminos" formControlName="terminos">
                     Aceptar <a href="#">Términos y condiciones</a>
-                    <span class="oculto"> Debes aceptar los términos para que el formulario sea valido.</span>
+                    <span class="oculto"> Debe aceptar los términos para que el formulario sea valido.</span>
                     </div>
                 </label>
 
@@ -118,7 +118,7 @@
     <p>Complete correctamente todos los campos
     </p>
     <p>
-        Si los campos se completan correctamente, los datos se van a mostrar en pantalla (no se envian a ningun servidor) por ende el formulario va a estar validado.
+        Si los campos se completan correctamente, los datos se van a mostrar en pantalla (no se envían a ningun servidor) por ende el formulario va a estar validado.
     </p>
     <p>
         En el caso contrario, el formulario no va a ser validado.
